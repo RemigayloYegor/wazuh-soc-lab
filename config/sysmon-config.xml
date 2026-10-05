@@ -1,0 +1,42 @@
+<!--
+  Минимальная конфигурация Sysmon для лаборатории: только события, на которых
+  построены правила 100101-100105. Для боевого использования берите полные
+  конфиги (SwiftOnSecurity/sysmon-config, olafhartong/sysmon-modular).
+  Установка: Sysmon64.exe -accepteula -i sysmon-config.xml
+-->
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <CheckRevocation/>
+  <EventFiltering>
+
+    <!-- Event 1: создание процессов — логируем все -->
+    <RuleGroup name="process_create" groupRelation="or">
+      <ProcessCreate onmatch="exclude"/>
+    </RuleGroup>
+
+    <!-- Event 3: сетевые соединения скриптовых интерпретаторов -->
+    <RuleGroup name="network" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <Image condition="end with">powershell.exe</Image>
+        <Image condition="end with">pwsh.exe</Image>
+        <Image condition="end with">rundll32.exe</Image>
+        <Image condition="end with">mshta.exe</Image>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!-- Event 10: доступ к памяти LSASS -->
+    <RuleGroup name="lsass_access" groupRelation="or">
+      <ProcessAccess onmatch="include">
+        <TargetImage condition="end with">lsass.exe</TargetImage>
+      </ProcessAccess>
+    </RuleGroup>
+
+    <!-- Events 12-14: ключи автозапуска -->
+    <RuleGroup name="autoruns" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <TargetObject condition="contains">\CurrentVersion\Run</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>

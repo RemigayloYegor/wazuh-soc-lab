@@ -1,0 +1,15 @@
+# systemd-юнит: детектор сканирования в режиме follow.
+# Установка:
+#   sudo cp soclab-portscan.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now soclab-portscan
+[Unit]
+Description=soclab port scan detector (UFW log -> JSON for Wazuh)
+After=network.target
+
+[Service]
+ExecStartPre=/usr/bin/mkdir -p /var/log/soclab
+ExecStart=/opt/soclab/.venv/bin/soclab portscan /var/log/ufw.log --follow -o /var/log/soclab/portscan.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
