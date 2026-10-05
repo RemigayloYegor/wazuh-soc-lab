@@ -1,0 +1,88 @@
+[
+  {
+    "rule": "100101", "name": "encoded-powershell", "expect": true, "group": "sysmon_event1",
+    "event": {"win": {"eventdata": {
+      "image": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+      "commandLine": "powershell.exe -NoP -enc VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAiAGgAaQAiAA=="
+    }}}
+  },
+  {
+    "rule": "100101", "name": "plain-powershell", "expect": false, "group": "sysmon_event1",
+    "event": {"win": {"eventdata": {
+      "image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "commandLine": "powershell.exe -ExecutionPolicy Bypass -File C:\\scripts\\backup.ps1"
+    }}}
+  },
+  {
+    "rule": "100101", "name": "wrong-sysmon-event", "expect": false, "group": "sysmon_event3",
+    "event": {"win": {"eventdata": {
+      "image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "commandLine": "powershell.exe -enc VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAiAGgAaQAiAA=="
+    }}}
+  },
+  {
+    "rule": "100102", "name": "sekurlsa", "expect": true, "group": "sysmon_event1",
+    "event": {"win": {"eventdata": {
+      "commandLine": "m.exe \"privilege::debug\" \"sekurlsa::logonpasswords\" exit"
+    }}}
+  },
+  {
+    "rule": "100102", "name": "benign", "expect": false, "group": "sysmon_event1",
+    "event": {"win": {"eventdata": {"commandLine": "notepad.exe C:\\notes\\debug.txt"}}}
+  },
+  {
+    "rule": "100103", "name": "procdump-lsass", "expect": true, "group": "sysmon_event_10",
+    "event": {"win": {"eventdata": {
+      "sourceImage": "C:\\Tools\\procdump64.exe",
+      "targetImage": "C:\\\\Windows\\\\system32\\\\lsass.exe",
+      "grantedAccess": "0x1fffff"
+    }}}
+  },
+  {
+    "rule": "100103", "name": "low-access", "expect": false, "group": "sysmon_event_10",
+    "event": {"win": {"eventdata": {
+      "targetImage": "C:\\Windows\\system32\\lsass.exe",
+      "grantedAccess": "0x1000"
+    }}}
+  },
+  {
+    "rule": "100104", "name": "run-key", "expect": true, "group": "sysmon_event_13",
+    "event": {"win": {"eventdata": {
+      "targetObject": "HKU\\\\S-1-5-21-1\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\\\\Updater"
+    }}}
+  },
+  {
+    "rule": "100104", "name": "runonce-single-backslash", "expect": true, "group": "sysmon_event_13",
+    "event": {"win": {"eventdata": {
+      "targetObject": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\x"
+    }}}
+  },
+  {
+    "rule": "100104", "name": "other-key", "expect": false, "group": "sysmon_event_13",
+    "event": {"win": {"eventdata": {
+      "targetObject": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunningServices\\x"
+    }}}
+  },
+  {
+    "rule": "100105", "name": "schtasks-create", "expect": true, "group": "sysmon_event1",
+    "event": {"win": {"eventdata": {
+      "image": "C:\\Windows\\System32\\schtasks.exe",
+      "commandLine": "schtasks.exe /create /tn Updater /tr C:\\Users\\Public\\u.exe /sc onlogon"
+    }}}
+  },
+  {
+    "rule": "100105", "name": "schtasks-query", "expect": false, "group": "sysmon_event1",
+    "event": {"win": {"eventdata": {
+      "image": "C:\\Windows\\System32\\schtasks.exe",
+      "commandLine": "schtasks.exe /query /fo LIST"
+    }}}
+  },
+  {
+    "rule": "100106", "name": "detector-alert", "expect": true, "decoder": "json",
+    "event": {"detector": "portscan", "scan_type": "vertical", "src_ip": "192.168.56.10"}
+  },
+  {
+    "rule": "100106", "name": "other-json", "expect": false, "decoder": "json",
+    "event": {"detector": "portscanner-test", "src_ip": "192.168.56.10"}
+  }
+]
