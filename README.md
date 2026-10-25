@@ -29,6 +29,11 @@ SOC-лаборатория на **Wazuh 4.x**: SIEM с агентами Windows 
 
 Доводка агентов Windows/Linux до enrollment — см. [`docs/finish-agents.md`](docs/finish-agents.md).
 
+**Разбор инцидента:** во время работы стенда индексация алертов остановилась из-за
+переполнения диска (модуль Vulnerability Detection занял 20 ГБ → OpenSearch заблокировал
+индексы). Диагностика и устранение описаны как инцидент SOC —
+[`docs/incidents/incident-001-indexer-disk-full.md`](docs/incidents/incident-001-indexer-disk-full.md).
+
 ## Что в репозитории
 
 | Путь | Назначение |
