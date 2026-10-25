@@ -1,0 +1,6 @@
+# Wazuh version
+WAZUH_VERSION="v4.14.3"
+WAZUH_REVISION="rc3"
+WAZUH_TYPE="server"
+
+# Ruleset syntax check (wazuh-analysisd -t):

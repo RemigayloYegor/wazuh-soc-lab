@@ -1,0 +1,10 @@
+# Total alerts
+272
+
+# MITRE techniques detected
+  T1110.001: 102
+  T1078: 65
+  T1021.004: 45
+  T1548.003: 25
+  T1110: 20
+  T1021: 5

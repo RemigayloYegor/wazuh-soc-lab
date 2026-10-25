@@ -6,11 +6,13 @@
 -->
 <group name="soclab,">
 
-  <!-- 1. Linux: SSH-брутфорс — 8+ неудачных входов с одного IP за 2 минуты -->
-  <rule id="100100" level="10" frequency="8" timeframe="120">
-    <if_matched_sid>5760</if_matched_sid>
-    <same_srcip />
-    <description>SSH brute force: 8+ failed logins from $(srcip) in 120s</description>
+  <!-- 1. Linux: SSH-брутфорс. Наследуется от штатного 5763 (sshd brute force),
+       поднимает уровень до 12 и фиксирует технику MITRE для карты ATT&CK.
+       Примечание: отдельный частотный композит на 5760 конкурировал со штатным
+       5763 одного уровня и не срабатывал — на живом стенде выбран overlay на 5763. -->
+  <rule id="100100" level="12">
+    <if_sid>5763</if_sid>
+    <description>SSH brute force confirmed from $(srcip) (MITRE T1110.001)</description>
     <mitre>
       <id>T1110.001</id>
     </mitre>

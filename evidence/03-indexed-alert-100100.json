@@ -1,0 +1,50 @@
+{
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+        "total": 3,
+        "successful": 3,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 1,
+            "relation": "eq"
+        },
+        "max_score": 4.158883,
+        "hits": [
+            {
+                "_index": "wazuh-alerts-4.x-2026.10.25",
+                "_id": "IV2rcqEB5yRJmQTFVcM9",
+                "_score": 4.158883,
+                "_source": {
+                    "agent": {
+                        "name": "wazuh-server"
+                    },
+                    "data": {
+                        "srcip": "10.10.10.2"
+                    },
+                    "rule": {
+                        "level": 12,
+                        "description": "SSH brute force confirmed from 10.10.10.2 (MITRE T1110.001)",
+                        "mitre": {
+                            "technique": [
+                                "Password Guessing"
+                            ],
+                            "id": [
+                                "T1110.001"
+                            ],
+                            "tactic": [
+                                "Credential Access"
+                            ]
+                        },
+                        "id": "100100"
+                    },
+                    "full_log": "Oct 25 10:46:29 wazuh-server sshd[9838]: Failed password for wazuh-user from 10.10.10.2 port 54146 ssh2",
+                    "timestamp": "2026-10-25T10:46:30.673+0000"
+                }
+            }
+        ]
+    }
+}

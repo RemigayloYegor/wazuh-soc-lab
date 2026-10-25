@@ -1,0 +1,301 @@
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '1'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:02:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:02:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '2'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:03:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:03:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '3'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:04:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:04:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '4'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:05:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:05:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '5'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:06:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:06:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '6'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:07:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:07:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '7'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:08:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:08:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '100100'
+	level: '12'
+	description: 'SSH brute force confirmed from 203.0.113.50 (MITRE T1110.001)'
+	groups: '['soclab', 'authentication_failures']'
+	firedtimes: '1'
+	mail: 'True'
+	mitre.id: '['T1110.001']'
+	mitre.tactic: '['Credential Access']'
+	mitre.technique: '['Password Guessing']'
+	pci_dss: '['10.2.4']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:09:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:09:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '8'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
+
+**Phase 1: Completed pre-decoding.
+	full event: 'Oct 25 12:10:00 wazuh-server sshd[9000]: Failed password for wazuh-user from 203.0.113.50 port 50000 ssh2'
+	timestamp: 'Oct 25 12:10:00'
+	hostname: 'wazuh-server'
+	program_name: 'sshd'
+
+**Phase 2: Completed decoding.
+	name: 'sshd'
+	parent: 'sshd'
+	dstuser: 'wazuh-user'
+	srcip: '203.0.113.50'
+	srcport: '50000'
+
+**Phase 3: Completed filtering (rules).
+	id: '5760'
+	level: '5'
+	description: 'sshd: authentication failed.'
+	groups: '['syslog', 'sshd', 'authentication_failed']'
+	firedtimes: '9'
+	gdpr: '['IV_35.7.d', 'IV_32.2']'
+	gpg13: '['7.1']'
+	hipaa: '['164.312.b']'
+	mail: 'False'
+	mitre.id: '['T1110.001', 'T1021.004']'
+	mitre.tactic: '['Credential Access', 'Lateral Movement']'
+	mitre.technique: '['Password Guessing', 'SSH']'
+	nist_800_53: '['AU.14', 'AC.7']'
+	pci_dss: '['10.2.4', '10.2.5']'
+	tsc: '['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3']'
+**Alert to be generated.
+
