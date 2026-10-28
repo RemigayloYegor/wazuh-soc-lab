@@ -6,14 +6,19 @@ SOC-лаборатория на **Wazuh 4.x**: SIEM с агентами Windows 
 детектирования с разметкой **MITRE ATT&CK**, Python-детектор сканирования портов, учёт
 узлов через Wazuh API и генератор отчётов по алертам.
 
+```mermaid
+flowchart LR
+    K["Kali<br/>атакующий"] -->|"SSH brute · nmap"| W["win-agent<br/>+ Sysmon"]
+    K -->|"SSH brute · nmap"| U["ubuntu-agent<br/>+ UFW"]
+    W --> M["Wazuh manager"]
+    U --> M
+    M --> RULES["local_rules.xml<br/>7 правил · MITRE ATT&CK"]
+    RULES --> AL["Алерты в индексе"]
+    AL --> D["Dashboard<br/>Threat Hunting"]
 ```
-            ┌─────────────┐
-  Kali ────▶│ win10-agent │──(Sysmon)──┐
- (атаки)    └─────────────┘            │        ┌──────────────────┐
-            ┌─────────────┐            ├──────▶ │  wazuh-manager   │──▶ Dashboard
-  Kali ────▶│ ubuntu-agent│──(UFW+     │        │  local_rules.xml │    (Threat Hunting)
- (атаки)    └─────────────┘  soclab)───┘        └──────────────────┘
-```
+
+> Проверено на живом стенде: перебор паролей SSH → правило **100100** (уровень 12, MITRE
+> **T1110.001**) — см. [`evidence/`](evidence/).
 
 ## Результаты на живом стенде (2026-10-25)
 
